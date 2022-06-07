@@ -1,0 +1,11 @@
+package solution;
+
+import java.util.HashMap;
+
+public class LV1Report {
+	public static HashMap<String, Integer> reportTable = new HashMap<String, Integer>();
+	public int[] solution(String[] id_list, String[] report, int k) {
+        int[] answer = {};
+        return answer;
+    }
+}

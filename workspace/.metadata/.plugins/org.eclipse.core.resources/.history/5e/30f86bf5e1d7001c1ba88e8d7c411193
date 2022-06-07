@@ -1,0 +1,27 @@
+package solution;
+
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class LV1Report {
+	public static HashMap<String, HashSet<String>> reportTable = new HashMap<>();
+	public static HashMap<String, Integer> reportCount = new HashMap<>();
+	
+	public int[] solution(String[] id_list, String[] report, int k) {
+        int[] answer = {};
+        
+        for(String id : id_list) {
+        	reportTable.put(id, new HashSet<String>());
+        	reportCount.put(id, 0);
+        }
+        for(String r : report) {
+        	String[] spl = r.split(" ");
+        	String src = spl[0];
+        	String dest = spl[1];
+        	
+        	reportTable.get(src).add(dest);
+        }
+        
+        return answer;
+    }
+}

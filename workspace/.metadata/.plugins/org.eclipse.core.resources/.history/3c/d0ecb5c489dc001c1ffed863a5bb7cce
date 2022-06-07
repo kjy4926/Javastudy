@@ -1,0 +1,11 @@
+package kakao_blind_recruit_2022;
+
+import java.util.HashMap;
+
+public class LV2Parking {
+	static HashMap<String, int> park = new HashMap<String, int>();
+	public int[] solution(int[] fees, String[] records) {
+		int[] answer = {};
+        return answer;
+    }
+}

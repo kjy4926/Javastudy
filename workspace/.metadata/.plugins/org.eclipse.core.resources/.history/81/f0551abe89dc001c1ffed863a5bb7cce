@@ -1,0 +1,8 @@
+package kakao_blind_recruit_2022;
+
+public class LV2Parking {
+	public int[] solution(int[] fees, String[] records) {
+        int[] answer = {};
+        return answer;
+    }
+}

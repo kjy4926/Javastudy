@@ -1,0 +1,5 @@
+package data_board;
+
+public interface Handler {
+	public String handling() {};
+}

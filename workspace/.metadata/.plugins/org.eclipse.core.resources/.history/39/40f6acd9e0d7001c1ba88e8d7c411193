@@ -1,0 +1,19 @@
+package solution;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class LV1Report {
+	public static HashMap<String, ArrayList<String>> reportTable = new HashMap<>();
+	public static HashMap<String, Integer> reportCount = new HashMap<>();
+	
+	public int[] solution(String[] id_list, String[] report, int k) {
+        int[] answer = {};
+        
+        for(String id : id_list) {
+        	reportTable.put(id, new ArrayList<String>());
+        }
+        
+        return answer;
+    }
+}

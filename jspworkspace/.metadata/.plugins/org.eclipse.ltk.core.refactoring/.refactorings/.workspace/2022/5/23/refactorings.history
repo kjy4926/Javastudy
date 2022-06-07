@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;data_board&apos; to &apos;web_service&apos;" description="Rename resource &apos;data_board&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/data_board" name="web_service" stamp="1653956730750" updateReferences="true"/>
+</session>

@@ -1,0 +1,49 @@
+/**
+ * 
+ */
+function idCheck(id){
+	if(id == ""){
+		alert("아이디를 입력하세요.");
+		document.regForm.id.focus();
+	}
+	else{
+		var popWidth = 300;
+		var popHeight = 200;
+		var winWidth = document.body.clientWidth;
+		var winHeight = document.body.clientHeight;	
+		var winX = window.screenLeft;
+		var winY = window.screenTop;
+		var popX = winX + (winWidth - popWidth)/2;
+		var popY = winY + (winHeight - popHeight)/2;
+		url = "idCheck.jsp?id="+id;
+		window.open(url, "post",
+				"left="+popX+",top="+popY+",width="+popWidth+",height="+popHeight);
+	}
+}
+
+function inputCheck(){
+	if(documnet.regForm.id.value==""){
+		alert("아이디를 입력하세요.");
+		document.regForm.id.focus();
+		return;
+	}
+	if(documnet.regForm.pass.value==""){
+		alert("비밀번호를 입력하세요.");
+		document.regForm.pass.focus();
+		return;
+	}
+	if(document.regForm.repass.value==""){
+		alert("비밀번호 확인을 입력하세요.");
+		document.regForm.repass.focus();
+		return;
+	}
+	if(document.regForm.pass.value != document.regForm.repass.value){
+		alert("비밀번호가 일치하지 않습니다.");
+		document.regForm.repass.focus();
+	}
+	if(document.regForm.email.value==""){
+		alert("이메일을 입력하세요.");
+		document.regForm.email.focus();
+		return;
+	}
+}

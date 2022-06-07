@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;solution.Operation_14888&apos; to &apos;Backjoon14888&apos;&#x0D;&#x0A;- Original project: &apos;AlgorithmSolution&apos;&#x0D;&#x0A;- Original element: &apos;solution.Operation_14888&apos;&#x0D;&#x0A;- Renamed element: &apos;solution.Backjoon14888&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Operation_14888&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;solution{Operation_14888.java[Operation_14888" matchStrategy="1" name="Backjoon14888" qualified="false" references="true" similarDeclarations="false" stamp="1648780756808" textual="false" version="1.0"/>
+</session>

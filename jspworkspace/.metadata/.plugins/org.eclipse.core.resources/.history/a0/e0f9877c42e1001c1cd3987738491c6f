@@ -1,0 +1,10 @@
+package servletTest;
+
+import javax.servlet.http.HttpServlet;
+
+public class NowServlet extends HttpServlet {
+	@Override
+	public void init() throw ServletException{
+		System.out.println("서블릿 초기화");
+	}
+}

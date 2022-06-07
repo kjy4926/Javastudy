@@ -1,0 +1,32 @@
+package examservlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class DivCalculator extends HttpServlet{
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getRequestDispatcher("/divForm.jsp")
+			.forward(req, resp);
+	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		int n1 = Integer.parseInt(req.getParameter("n1"));
+		int n2 = Integer.parseInt(req.getParameter("n2"));
+		req.setAttribute("result", n1 / n2);
+		req.setAttribute("operation", "나눗셈");
+		req.getRequestDispatcher("/result.jsp").forward(req, resp);
+	}
+}
+
+
+
+
+
+
+
+

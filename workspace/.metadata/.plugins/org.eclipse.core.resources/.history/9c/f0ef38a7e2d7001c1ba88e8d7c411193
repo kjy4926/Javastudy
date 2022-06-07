@@ -1,0 +1,21 @@
+package solution;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class LV1Report {
+	static HashSet<String> reportSet = new HashSet<>();
+	static HashMap<String, ArrayList<String>> reportTable = new HashMap<>();
+	
+	public int[] solution(String[] id_list, String[] report, int k) {
+        int[] answer = {};
+        
+        for(String s : report) {
+        	reportSet.add(s);
+        }
+        
+        
+        return answer;
+    }
+}

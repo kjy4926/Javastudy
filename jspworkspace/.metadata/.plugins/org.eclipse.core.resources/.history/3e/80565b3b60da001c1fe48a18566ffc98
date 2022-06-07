@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%request.setCharacterEncoding("UTF-8"); %>
+<jsp:useBean id="dao" class="memberone.MemberDAO"></jsp:useBean>
+<jsp:useBean id="dto" class="memberone.MemberDTO"></jsp:useBean>
+<jsp:setProperty name="dto" property="*"></jsp:setProperty>
+<%
+	boolean flag = dao.memberInsert(dto);
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>회원 가입 확인</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+</body>
+</html>

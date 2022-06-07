@@ -1,0 +1,26 @@
+package servletTest;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class AddCalculator extends HttpServlet{
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		req.getRequestDispatcher("/form.jsp").forward(req,  resp);
+	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		int n1 = Integer.parseInt((String)req.getAttribute("n1"));
+		int n2 = Integer.parseInt((String)req.getAttribute("n2"));
+		req.setAttribute("oper", "+");
+		req.setAttribute("result", n1+n2);
+		req.getRequestDispatcher("/result.jsp").forward(req, resp);
+	}
+}

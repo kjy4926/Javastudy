@@ -1,0 +1,24 @@
+package data_board;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class IdCheck implements Handler{
+	@Override
+	public String handling(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		MemberDAO mdao = MemberDAO.getInstance();
+		PrintWriter out = resp.getWriter();
+		int idcheck = 0;
+		System.out.println(req.getParameter("userId"));
+		// 중복이 아니라면
+		if(!mdao.idDuplicateCheck(req.getParameter("userId"))) {
+			idcheck= 1;
+		}
+		out.print(idcheck+""); // ajax 결과값
+		return "idcheck";
+	}
+}

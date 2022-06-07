@@ -1,0 +1,41 @@
+package solution;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+public class Backjoon11049 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static int n;
+	static ArrayList<int[]> matrix = new ArrayList<>();
+	static ArrayList<ArrayList<int[]>> dp = new ArrayList<ArrayList<int[]>>();
+	
+	public static void main(String[] args) {
+		try {
+			n = Integer.parseInt(br.readLine());
+			// matrix input
+			for(int i=0;i<n;i++) {
+				StringTokenizer	st = new StringTokenizer(br.readLine());
+				int x = Integer.parseInt(br.readLine());
+				int y = Integer.parseInt(br.readLine());
+				matrix.add(new int[] {x, y});
+			}
+			// dp init
+			for(int i=0;i<21;i++) {
+				dp.add(new ArrayList<int[]>());
+			}
+			for(int i=0;i<n;i++) {
+				dp.get(1).add(matrix.get(i));
+			}
+			// dp
+			for(int i=2;i<n;i++) {
+				
+			}
+		} catch (NumberFormatException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

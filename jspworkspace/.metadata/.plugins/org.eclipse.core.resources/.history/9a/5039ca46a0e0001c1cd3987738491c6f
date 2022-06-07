@@ -1,0 +1,10 @@
+package data_board;
+
+import java.sql.Timestamp;
+
+public class MemberDTO {
+	private String id;
+	private String pwd;
+	private String email;
+	private Timestamp signupdate;
+}

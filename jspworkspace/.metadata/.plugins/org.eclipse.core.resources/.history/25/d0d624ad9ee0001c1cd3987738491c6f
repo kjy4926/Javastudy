@@ -1,0 +1,12 @@
+package data_board;
+
+public class MemberDAO {
+	private static MemberDAO instance = null;
+	private MemberDAO() {}
+	
+	public static MemberDAO getInstance() {
+		if(instance==null) {
+			
+		}
+	}
+}
