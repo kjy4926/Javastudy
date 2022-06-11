@@ -1,9 +1,0 @@
-package servletTest;
-
-import java.util.HashMap;
-
-import javax.servlet.http.HttpServlet;
-
-public class DispatcherServlet extends HttpServlet{
-	private HashMap<String, Calculator> map = new HashMap<>();
-}

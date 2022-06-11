@@ -1,0 +1,14 @@
+127.0.0.1 - - [09/Jun/2022:14:02:29 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:14:02:30 +0900] "GET /web_service/docs/signup.js HTTP/1.1" 200 1920
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:14:02:46 +0900] "GET /web_service/index HTTP/1.1" 200 2502
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:14:02:46 +0900] "GET /web_service/docs/css/bootstrap.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:14:02:46 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:14:02:50 +0900] "GET /web_service/loginform HTTP/1.1" 200 3309
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:14:02:52 +0900] "GET /web_service/signupform HTTP/1.1" 200 5302
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:14:02:52 +0900] "GET /web_service/docs/signup.js HTTP/1.1" 200 1920
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:14:02:58 +0900] "POST /web_service/idcheck HTTP/1.1" 200 1
+127.0.0.1 - - [09/Jun/2022:14:26:38 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:14:26:39 +0900] "GET /web_service/ HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:14:26:44 +0900] "GET /web_service/index HTTP/1.1" 200 2502
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:14:26:44 +0900] "GET /web_service/docs/css/bootstrap.min.css HTTP/1.1" 200 184752
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:14:26:51 +0900] "GET /web_service/index HTTP/1.1" 200 2502

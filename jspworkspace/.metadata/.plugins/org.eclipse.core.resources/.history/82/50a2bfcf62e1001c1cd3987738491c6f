@@ -1,8 +1,0 @@
-package servletTest;
-
-import java.io.IOException;
-
-
-public interface Calculator{
-	public String calculate() {}
-}
