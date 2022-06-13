@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import kr.jy.jyweb.test.JpaTest;
+
 @Controller
 public class HelloController {
 	private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
@@ -17,6 +19,8 @@ public class HelloController {
 	public String hello(Locale locale, Model model) {		
 		logger.info("Welcome hello! The client locale is {}.", locale);
 		model.addAttribute("hello",  "Hello, World!");
+		
+		JpaTest.test();
 		
 		return "hello";
 	}
