@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+xmlns:beans="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- MVC관련 어노테이션 처리 -->
+	<annotation-driven/>
+	
+	<view-controller path="/main2" view-name="main"/>
+	
+	<default-servlet-handler/>
+	
+	<view-resolvers>
+		<jsp prefix="/WEB-INF/views/" suffix=".jsp"/>
+	</view-resolvers>
+	
+	<!-- 
+		인터셉터 mapping속성에 사용하는 특수문자(Ant패턴)
+		*: 0개 이상의 문자
+		?: 문자 한 개
+		**: 0개 이상의 디렉터리 경로 포함
+	 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/edit/**"/>
+			<exclude-mapping path="/edit/help/**"/> <!-- 인터셉터 동작에서 제외할 경로 패턴 -->
+			<beans:bean class="interceptor.AuthCheckInterceptor"/>
+		</interceptor>
+	</interceptors>
+	
+</beans:beans>
+
+
+
+
+
+
+
+
+
+
+
+

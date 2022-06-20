@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation=
+"http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<bean id="myAspect" class="aop08.MyAspect"/>
+	<bean id="finishAspect" class="aop08.FinishAspect"/>
+	<bean id="afterReturningAspect" class="aop08.AfterReturningAspect"/>
+	
+	<bean id="progamer" class="aop08.Progamer"/>
+	<bean id="programmer" class="aop08.Programmer"/>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* usingComputer(..))" id="myPointcut"/>
+		<aop:aspect ref="myAspect">
+			<aop:before method="bootingAndLogin" pointcut-ref="myPointcut"/>
+		</aop:aspect>
+		<aop:aspect ref="finishAspect">
+			<aop:after method="shutdown" pointcut-ref="myPointcut"/>
+		</aop:aspect>
+		<aop:aspect ref="afterReturningAspect">
+			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
+		</aop:aspect>
+	</aop:config>
+	
+</beans>
+
+
+

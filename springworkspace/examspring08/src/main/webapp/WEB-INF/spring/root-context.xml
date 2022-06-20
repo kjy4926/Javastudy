@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation=
+"http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- DataSource 등록 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<!-- 접속 관련 설정 -->
+		<property name="driverClass" value="oracle.jdbc.OracleDriver"/>
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+
+		<!-- Log4j2 적용 시 -->
+
+		<!-- Oracle -->
+		<!-- <property name="driverClass" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe"/> -->
+		
+		<!-- MySQL -->
+<!-- 	<property name="driverClassName"value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+		<property name="jdbcUrl"value="jdbc:log4jdbc:mysql://localhost:3306/ksj?serverTimezone=Asia/Seoul"> 
+-->
+
+		<property name="user" value="c##tester"/>
+		<property name="password" value="1234"/>
+		
+		<!-- pool 관련 설정 -->
+		<property name="maxPoolSize" value="100"/>
+		<property name="maxIdleTime" value="600"/>
+		<property name="idleConnectionTestPeriod" value="300"/>
+	</bean>
+
+	<!-- 무조건 빈 이름은 messageSource일 것! -->
+	<bean id="messageSource" 
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+			<property name="basenames">
+				<list>
+					<value>message.label</value>
+				</list>
+			</property>
+			<property name="defaultEncoding" value="UTF-8"/>
+	</bean>
+	
+	<!-- <bean class="controller.CommonExceptionHandler"/> -->
+	
+	<context:component-scan base-package="spring"/>
+	<context:component-scan base-package="controller"/>
+	<context:component-scan base-package="survey"/>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
