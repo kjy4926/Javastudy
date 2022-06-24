@@ -23,19 +23,19 @@ public class ListController {
 	public ListController(BookService bookService) {this.bookService = bookService;}
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public String doGetlist(Model model) {
+	public String doGetList(Model model) {
 		logger.info("list METHOD GET");
 		model.addAttribute("booklist", bookService.selectBookList());
 		return "/list/book_list";
 	}
 	@RequestMapping(value="/list", method=RequestMethod.POST)
-	public String doPostlist(Model model) {
+	public String doPostList(Model model) {
 		logger.info("list METHOD POST");
 		return "redirect:/list";
 	}
 	@RequestMapping(value="/search", method=RequestMethod.GET)
-	public String search(Model model, @RequestParam(value="search", required=false) String title) {
-		logger.info("search");
+	public String doGetSearch(Model model, @RequestParam(value="search", required=false) String title) {
+		logger.info("search post");
 		model.addAttribute("booklist", bookService.searchBookList(title));
 		return "/list/book_list";
 	}

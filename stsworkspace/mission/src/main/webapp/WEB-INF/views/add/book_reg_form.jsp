@@ -5,7 +5,7 @@
 <head>
 	<title>도서 등록</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="stylesheet" href="<c:url value='resources/css/bootstrap.min.css' />">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
 	<style>
 		#image{width: 180px; height: 250px; visibility: hidden;}
 		.book-regist{
@@ -16,7 +16,7 @@
 		.star{color: red;}
 		.button-area{float: right;}
 	</style>
-	<script src="<c:url value='resources/js/bookadd.js'/>"type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/bookadd.js" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>

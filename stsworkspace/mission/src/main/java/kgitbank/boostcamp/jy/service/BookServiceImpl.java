@@ -37,4 +37,10 @@ public class BookServiceImpl implements BookService {
 			return true;
 		} catch (Exception e) {e.printStackTrace(); return false;}
 	}
+
+	@Override
+	public BookVO readBook(long id) {
+		try {return bookDao.selectById(id);} 
+		catch (Exception e) {e.printStackTrace(); return null;}
+	}
 }

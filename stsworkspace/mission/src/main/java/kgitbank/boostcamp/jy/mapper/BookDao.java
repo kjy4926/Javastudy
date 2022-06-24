@@ -11,5 +11,6 @@ import kgitbank.boostcamp.jy.vo.BookVO;
 public interface BookDao {
 	public List<BookVO> selectList() throws Exception;
 	public List<BookVO> selectByTitle(String title) throws Exception;
+	public BookVO selectById(long id) throws Exception;
 	public boolean insert(BookVO bookVO) throws Exception;
 }

@@ -7,5 +7,6 @@ import kgitbank.boostcamp.jy.vo.BookVO;
 public interface BookService {
 	public List<BookVO> selectBookList(); 
 	public List<BookVO> searchBookList(String title);
+	public BookVO readBook(long id);
 	public boolean bookInsert(BookVO bookVO);
 }

@@ -33,6 +33,7 @@ public class AddController {
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public String addSubmit(@ModelAttribute BookVO bookVO) {
 		logger.info("add post");
+		bookVO.setContent(bookVO.getContent().replace("\n", "<br>"));
 		bookService.bookInsert(bookVO);
 		return "redirect:/list";
 	}

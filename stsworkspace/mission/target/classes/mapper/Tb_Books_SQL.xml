@@ -3,10 +3,21 @@
 
 	<mapper namespace="kgitbank.boostcamp.jy.mapper.BookDao">
 	<select id="selectList" resultType="bookVO">
-		SELECT * FROM books
+		SELECT * 
+		FROM books 
+		ORDER BY id ASC
 	</select>
 	<select id="selectByTitle" resultType="bookVO">
-		SELECT * FROM books WHERE title LIKE '%' || #{search} || '%'
+		SELECT * 
+		FROM books 
+		WHERE title 
+			LIKE '%' || #{search} || '%'
+		ORDER BY id ASC
+	</select>
+	<select id="selectById" resultType="bookVO">
+		SELECT * 
+		FROM books 
+		WHERE id = #{id}
 	</select>
 	<insert id="insert">
 		INSERT INTO books VALUES(BOOKS_SEQ.NEXTVAL, #{img}, #{isbn}, #{title}, #{author}, #{publisher}, #{price}, #{content})
