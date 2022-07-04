@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import kgitbank.boostcamp.jy.mapper.BookDao;
 import kgitbank.boostcamp.jy.vo.BookVO;
+import kgitbank.boostcamp.jy.vo.PageVO;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -19,14 +20,13 @@ public class BookServiceImpl implements BookService {
 	
 	@Override
 	@Transactional
-	public List<BookVO> selectBookList() {
-		try {return bookDao.selectList();} 
+	public List<BookVO> selectBookList(PageVO pageVO) {
+		try {return bookDao.selectList(pageVO);} 
 		catch (Exception e) {e.printStackTrace(); return null;}
 	}
-
 	@Override
-	public List<BookVO> searchBookList(String title) {
-		try {return bookDao.selectByTitle(title);
+	public List<BookVO> searchBookList(PageVO pageVO) {
+		try {return bookDao.selectByTitle(pageVO);
 		} catch (Exception e) {e.printStackTrace(); return null;}
 	}
 
@@ -42,5 +42,17 @@ public class BookServiceImpl implements BookService {
 	public BookVO readBook(long id) {
 		try {return bookDao.selectById(id);} 
 		catch (Exception e) {e.printStackTrace(); return null;}
+	}
+	@Override
+	public Long getMaxPageNum() {
+		Long rowCount = bookDao.getBooksRowCount();
+		Long maxPage = rowCount % 10 == 0 ? rowCount/10 : rowCount/10 + 1;
+		return maxPage;
+	}
+	@Override
+	public Long getSearchMaxPageNum(String title) {
+		Long rowCount = bookDao.getSearchBooksRowCount(title);
+		Long maxPage = rowCount % 10 == 0 ? rowCount/10 : rowCount/10 + 1;
+		return maxPage;
 	}
 }
