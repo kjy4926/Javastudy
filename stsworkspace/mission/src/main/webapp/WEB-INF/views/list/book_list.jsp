@@ -53,7 +53,7 @@
 			    </li>
 			  	<c:forEach var="i" begin="1" end="${maxP}" varStatus="vs">
 				  	<li class="page-item">
-				      <a class="page-link" href="${pageContext.request.contextPath}/list/${maxP-vs.index}">${maxP-vs.index}</a>
+				      <a class="page-link" href="${pageContext.request.contextPath}/list/${maxP-vs.index+1}">${maxP-vs.index+1}</a>
 				    </li>
 			  	</c:forEach>
 			    <li class="page-item">
