@@ -69,7 +69,7 @@ public class ListController {
 	public String doGetSearch(Model model, @RequestParam(value="search", required=false) String title) {
 		logger.info("search get");
 		// 검색어가 없다면 목록 초기 화면으로 이동
-		if(title.trim().length() == 0) {
+		if(title == null || title.trim().length()==0) {
 			return "redirect:/list";
 		}
 		// 검색어 설정 후 리다이렉트
